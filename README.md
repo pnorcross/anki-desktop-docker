@@ -15,6 +15,7 @@ services:
       - /data/apps/anki/config:/config/app
     ports: 
       - 3000:3000
+      # Anki Connect port
       - 8765:8765
  ```
 
@@ -37,6 +38,7 @@ services:
       - "traefik.http.services.anki.loadbalancer.server.port=3000"
       - "traefik.http.services.anki.loadbalancer.server.scheme=http"
       - "traefik.http.routers.anki.rule=Host(`anki.example.com`)"
+      # Anki Connect port
       - "traefik.http.routers.ankiapi.entryPoints=https"
       - "traefik.http.routers.ankiapi.tls=true"
       - "traefik.http.routers.ankiapi.service=ankiapi"
