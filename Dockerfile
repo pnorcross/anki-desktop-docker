@@ -10,9 +10,10 @@ FROM lsiobase/rdesktop-web:focal
   cd anki-2.1.54-linux-qt5 && ./install.sh &&  cd .. && \
   rm -rf anki-2.1.54-linux-qt5 anki-2.1.54-linux-qt5.tar.zst && \
   apt-get clean && \
-  mkdir -p /config/.local/share/Anki2 && \
-  echo software > /config/.local/share/Anki2/gldriver6 && \
-  echo software > /config/.local/share/Anki2/gldriver
+  mkdir -p /config/.local/share && \
+  ln -s /config/app/Anki  /config/.local/share/Anki  && \
+  ln -s /config/app/Anki2 /config/.local/share/Anki2
 
+VOLUME "/config/app" 
 
 COPY root/ /

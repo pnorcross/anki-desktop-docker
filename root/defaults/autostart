@@ -1,2 +1,5 @@
-xterm
-#export QT_XCB_GL_INTEGRATION=none && anki
+mkdir -p /config/app/Anki2 &&
+mkdir -p /config/app/Anki &&
+echo software > /config/.local/share/Anki2/gldriver6 && 
+echo software > /config/.local/share/Anki2/gldriver &&
+export LC_ALL=en_US.UTF-8 && anki
