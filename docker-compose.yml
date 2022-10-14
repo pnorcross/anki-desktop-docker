@@ -1,0 +1,9 @@
+services: 
+  anki-desktop: 
+    image: "pnorcross/anki-desktop:latest"
+    volumes:
+      - /data/apps/anki/config:/config/app
+    ports: 
+      - 3000:3000
+      # Anki Connect port
+      - 8765:8765
